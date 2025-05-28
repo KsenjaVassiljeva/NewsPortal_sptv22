@@ -1,10 +1,12 @@
 <?php
-ob_start();  // Start output buffering
+ob_start();
 ?>
-<h1>Uudised (kategooriad)</h1>  <!-- Corrected the <h1> tag -->
+<h1>Uudised (kategoorii)</h1>
 <br>
+
 <?php
-ViewNews::NewsByCategory($arr);  // Corrected method call and variable usage
-$content = ob_get_clean();  // Capture the output into the $content variable
-include_once 'view/layout.php';  // Corrected include_once syntax
+ViewNews::NewsByCategory($arr);
+$content = ob_get_clean();
+include_once 'view/layout.php';
+
 ?>

@@ -1,48 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Portal</title>
-    <!-- Corrected Bootstrap CDN link with integrity hash -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-9a6UptmQ7PbQPB04PtR9Mnmq97brlVRzX6tsI47eRG0s1nHg5bV9JlUmtGwmz5Up" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
-</head>
-<body>
-<nav class="one">
-    <ul class="topmenu">
-        <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
-            <ul class="submenu">
-                <?php
-                    // Assuming Controller::AllCategory() is a PHP function that outputs categories
-                    Controller::AllCategory();
-                ?>
+<html>
+    <head>
+        <title> NEWSPORTAL</title>
+            <linl rel="stylesheet" href="
+            https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity=
+            "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/ifQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <nav class="one">
+            <ul class="topmenu">
+                <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
+                    <ul class="submenu">
+                    <?php
+                            Controller::AllCategory();
+                        ?>
+                    </ul>
+                </li>
+                <li><a href="testError">Info</a></li>
+                <li><a href="./">Stardileht</a></li>
+                <li><a href="registerForm">Register</a></li>
+                <div class ="pull-right">
+                    <li>
+                        <form action="search">
+                            <input type="text" name="otsi">
+                            <input type="submit" name="Otsi">
+                        </form>
+                    </li>
+                </div>
             </ul>
-        </li>
-        <li><a href="#">Info</a></li>
-        <li><a href="/">Stardileht</a></li>
-    </ul>
-</nav>
+        </nav>
+            <section>
+                <div class= 'divBox'>
+                    <?php
+                    if (isset($content)){
+                        echo $content;
+                    }
+                    else {
+                        echo '<h1>Content is gone!</h1>';
+                    }
+                    ?>
+                </div>
+            </section>
+            <hr>
+            <p style="display:block; text-align:center;">JPTVR18 2019 a. &copy</p>
+        </body>
 
-<section>
-    <div>
-        <?php
-        // Check if content is available before displaying
-        if (isset($content)) {
-            echo $content;
-        } else {
-            echo '<h1>Content is unavailable!</h1>';
-        }
-        ?>
-    </div>
-</section>
-
-<hr>
-
-<footer style="text-align: center;">
-    <p>JPTVR18 2019 a. &copy; 2019</p>
-</footer>
-
-</body>
 </html>

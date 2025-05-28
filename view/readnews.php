@@ -1,9 +1,17 @@
 <?php
-ob_start();  // Start output buffering
+ob_start();
 ?>
+
 <br>
+
 <?php
-ViewNews::ReadNews($n);  // Corrected the method call syntax
-$content = ob_get_clean();  // Capture the output into the $content variable
-include_once 'view/layout.php';  // Corrected the include_once syntax
-?>
+ViewNews::ReadNews($n);
+
+echo "<br>";
+Controller::Comments($_GET['id']);
+
+echo "<br>";
+ViewComments::CommentsForm();
+
+$content = ob_get_clean();
+include_once 'view/layout.php';
