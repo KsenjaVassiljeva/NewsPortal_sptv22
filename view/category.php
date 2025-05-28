@@ -1,9 +1,11 @@
 <?php
-echo "<li class='submenu'><a href='all'>All</a></li><br>";
 
-foreach ($arr as $value) {
-    echo "<li class='submenu unit'>
-            <a href='category?id=" . $value['id'] . "'>" . $value['name'] . "</a>
-          </li><br>";
+echo "<li class='submenuunit'><a href='all'>ALL</a></li><br>";
+foreach($arr as $value) {
+    echo "<li class='submenuunit'>
+    <a href='category?id=".$value['id']."'>".$value['name'].'</a>
+    </li>
+    <br>';
 }
+
 ?>
