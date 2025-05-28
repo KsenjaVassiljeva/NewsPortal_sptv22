@@ -1,12 +1,17 @@
 <?php
-session_start();  // Corrected session_start() syntax
-include_once 'inc/Database.php';
+session_start();
+include_once 'inc/db.php';
 require 'model/Category.php';
 require 'model/News.php';
-include_once 'view/news.php';  // Fixed typo: changed '.phn' to '.php'
-include_once 'controller/Controller.php';  // Fixed typo: changed 'include once' to 'include_once'
-include_once 'route/routing.php';  // Fixed typo: changed '.phn' to '.php'
+require 'model/Comments.php';
+require 'model/Register.php';
 
-// Assuming response is a variable, echoing it
-echo $response;  // Changed 'response' to '$response'
+include_once 'view/news.php';
+include_once 'view/comments.php';
+
+
+include_once 'controller/Controller.php';
+include_once 'route/routing.php';
+
+echo $response;
 ?>
